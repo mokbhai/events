@@ -12,7 +12,6 @@ const EventPage = () => {
   const navigate = useNavigate();
   const { events, loading } = useContext(EventsContext);
   const [event, setEvent] = useState(null);
-
   const [showMoreEligibilities, setShowMoreEligibilities] = useState(false);
   const [showMoreRules, setShowMoreRules] = useState(false);
 
@@ -26,12 +25,13 @@ const EventPage = () => {
       }
     };
 
-    const foundEvent = events.find((evt) => evt._id === eventId);
+    const foundEvent = events.find((event) => event._id == eventId);
     if (foundEvent) {
       setEvent(foundEvent);
     } else {
       // fetchEvent();
     }
+    console.log(eventId, event);
   }, [eventId, events]);
 
   const handleApplyNow = () => {
@@ -205,7 +205,11 @@ const EventPage = () => {
                         <img
                           className="w-full h-auto rounded-xl"
                           key={photo._id}
-                          src={`${photo.file}`}
+                          src={
+                            photo.file
+                              ? `${photo.file}`
+                              : `${URL}/api/file/view/${photo}`
+                          }
                           alt="Event"
                         />
                       ))}

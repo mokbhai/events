@@ -19,7 +19,7 @@ const DevEventCard = ({ event, onClick }) => {
   if (event.photos && event.photos[0]) {
     backgroundImageUrl = event.photos[0].file
       ? `url(${event.photos[0].file})`
-      : `url(${URL}/api/file/view/${event.photos[0]._id})`;
+      : `url(${URL}/api/file/view/${event.photos[0]})`;
   } else backgroundImageUrl = "https://wallpapercave.com/wp/wp3842313.jpg";
 
   // backgroundImageUrl = `url(${event.photos[0].file})`;
@@ -28,7 +28,7 @@ const DevEventCard = ({ event, onClick }) => {
   if (event.avengerCharacter) {
     charImageUrl = event.avengerCharacter.file
       ? `${event.avengerCharacter.file}`
-      : `${URL}/api/file/view/${event.avengerCharacter._id}`;
+      : `${URL}/api/file/view/${event.avengerCharacter}`;
   } else charImageUrl = "https://wallpapercave.com/wp/wp3842313.jpg";
 
   return (

@@ -26,7 +26,7 @@ const RevolvingPhotos = () => {
             // Check if photos array exists and has elements
             imageUrl = event.photos[0].file
               ? `${event.photos[0].file}`
-              : `${URL}/api/file/view/${event.photos[0]._id}`; // Access _id of the photo object
+              : `${URL}/api/file/view/${event.photos[0]}`;
           } else {
             imageUrl = "https://wallpapercave.com/wp/wp3842313.jpg";
           }

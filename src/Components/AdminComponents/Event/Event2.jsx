@@ -263,6 +263,8 @@ const Event = () => {
 
   return (
     <div>
+      <p>Brochure:</p>
+      <FileUploadForm type="Brochure" onUpload={handleFileUpload} />
       <div className="event-creation text-black">
         <p>Event Photos:</p>
         <FileUploadForm type="EventPhotos" onUpload={handleFileUpload} />
